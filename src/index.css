@@ -1,0 +1,64 @@
+@import "tailwindcss";
+
+@theme {
+  --color-obsidian: #0D0D12;
+  --color-ivory: #FAF8F5;
+  --color-emerald-custom: #10B981;
+  --color-slate-custom: #2A2A35;
+  
+  --font-sans: 'Geist', 'Inter', sans-serif;
+  --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+}
+
+@layer base {
+  :root {
+    /* Default Dark Mode */
+    --bg-primary: #0D0D12; /* Obsidian */
+    --text-primary: #FAF8F5; /* Ivory */
+    --text-secondary: #94A3B8; /* slate-400 equivalent for better readability */
+    --accent: #10B981; /* Emerald */
+  }
+
+  body {
+    @apply bg-[var(--bg-primary)] text-[var(--text-primary)] font-sans antialiased overflow-x-hidden;
+    transition: background-color 0.8s cubic-bezier(0.16, 1, 0.3, 1), color 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+}
+
+/* Custom Scrollbar for dark theme */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-primary);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--text-secondary);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent);
+}
+
+/* Utilities for Glassmorphism */
+@layer utilities {
+  .glass-panel {
+    @apply bg-obsidian/50 backdrop-blur-xl border border-white/10 shadow-[inset_0_1px_0_rgba(255,255,255,0.1)];
+  }
+  
+  .glass-panel-light {
+    @apply bg-ivory/70 backdrop-blur-xl border border-black/5 shadow-[0_8px_32px_rgba(0,0,0,0.05)];
+  }
+  
+  .glass-card {
+    @apply bg-obsidian/30 backdrop-blur-md border border-white/5 shadow-[0_20px_40px_-15px_rgba(0,0,0,0.5)] rounded-[2.5rem] p-8;
+  }
+  
+  .glass-card-light {
+    @apply bg-ivory/50 backdrop-blur-md border border-slate-custom/10 shadow-[0_20px_40px_-15px_rgba(0,0,0,0.05)] rounded-[2.5rem] p-8;
+  }
+  
+  .text-glow {
+    text-shadow: 0 0 20px rgba(16, 185, 129, 0.3); /* Emerald glow */
+  }
+}
