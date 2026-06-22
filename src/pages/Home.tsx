@@ -1,34 +1,32 @@
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { PageTransition } from '../components/PageTransition';
-import { ArrowRight, TerminalWindow, CodeBlock, Crosshair, MapPin, CalendarBlank } from '@phosphor-icons/react';
+import { ArrowRight, TerminalWindow, MapPin, Code, ShieldCheck } from '@phosphor-icons/react';
+import { ROSTerminalCard, StepResponseCard, SFCDiagramCard } from '../components/MotionEngineCards';
 
 export default function Home() {
   const { scrollYProgress } = useScroll();
   const yImage = useTransform(scrollYProgress, [0, 1], ['0%', '30%']);
-  
+
   return (
     <PageTransition>
-      <main className="relative w-full">
+      <main className="relative w-full text-obsidian bg-obsidian">
         {/* Hero Section */}
         <section className="relative min-h-[100dvh] flex flex-col justify-center overflow-hidden w-full pt-32 pb-20">
+
           {/* Asymmetric Split Layout */}
           <div className="grid grid-cols-1 md:grid-cols-12 w-full flex-grow relative z-10">
+
             {/* Left Content Area */}
-            <div className="col-span-1 md:col-span-7 flex flex-col justify-center px-4 md:px-12 lg:px-24">
+            <div className="col-span-1 md:col-span-7 flex flex-col justify-center px-4 md:px-12 lg:px-24 py-12">
               <div className="max-w-2xl">
                 <motion.div
                   initial={{ opacity: 0, y: 30 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.2, type: 'spring', stiffness: 100, damping: 20 }}
                 >
-                  <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-obsidian bg-obsidian/50 backdrop-blur-md mb-8 shadow-sm">
-                    <span className="flex h-2 w-2 rounded-full bg-emerald-500 animate-pulse"></span>
-                    <span className="text-xs font-mono text-slate-300">Available from Jan 2027</span>
-                  </div>
-                  
-                  <h1 className="text-5xl md:text-7xl font-bold tracking-tighter leading-[1.1] mb-6 text-ivory">
+                  <h1 className="text-5xl md:text-7xl font-bold tracking-tighter leading-[1.1] mb-6 text-ivory drop-shadow-lg">
                     Lorenzo <br />
-                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-ivory to-slate-400">
+                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-emerald-600">
                       Ghessi
                     </span>
                   </h1>
@@ -39,9 +37,9 @@ export default function Home() {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.4, type: 'spring', stiffness: 100, damping: 20 }}
                 >
-                  <p className="text-lg md:text-xl text-slate-300 leading-relaxed mb-10 max-w-[50ch]">
-                    MSc Automation & Control Engineering student. Developing model-mediated teleoperation 
-                    systems with communication delay compensation at <span className="text-ivory font-medium">Leonardo S.p.A.</span>
+                  <p className="text-lg md:text-xl text-slate-300 leading-relaxed mb-10 max-w-[45ch]">
+                    MSc Automation & Control Engineering student. Developing model-mediated teleoperation
+                    systems with communication delay compensation.
                   </p>
                 </motion.div>
 
@@ -51,50 +49,79 @@ export default function Home() {
                   transition={{ delay: 0.6, type: 'spring', stiffness: 100, damping: 20 }}
                   className="flex flex-wrap gap-4 mb-12"
                 >
-                  <button className="glass-panel group flex items-center gap-2 px-6 py-3 rounded-full text-ivory font-medium hover:bg-emerald-500 hover:text-obsidian hover:border-emerald-500 transition-all duration-300">
+                  <button className="glass-panel group flex items-center gap-2 px-6 py-3 rounded-full text-ivory font-medium hover:bg-emerald-500 hover:text-obsidian hover:border-emerald-500 transition-all duration-300 shadow-[0_0_20px_rgba(16,185,129,0.2)]">
                     <span>View Engineering</span>
                     <ArrowRight className="group-hover:translate-x-1 transition-transform" />
                   </button>
-                  <button className="flex items-center gap-2 px-6 py-3 rounded-full text-slate-300 font-medium hover:text-ivory transition-colors duration-300">
+                  <button className="flex items-center gap-2 px-6 py-3 rounded-full text-slate-300 font-medium hover:text-ivory transition-colors duration-300 border border-white/5 bg-white/5 hover:bg-white/10">
                     <TerminalWindow />
                     <span className="font-mono text-sm">Download CV</span>
                   </button>
                 </motion.div>
 
-                {/* Live Status Bento */}
+                {/* Operator ID Card - Moved under buttons */}
                 <motion.div
                   initial={{ opacity: 0, scale: 0.95 }}
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ delay: 0.8, type: 'spring', stiffness: 100, damping: 20 }}
-                  className="glass-card !p-6 border-emerald-500/20 hover:border-emerald-500/40 transition-colors shadow-[0_8px_32px_rgba(16,185,129,0.05)]"
+                  className="relative group rounded-3xl max-w-lg"
                 >
-                  <div className="flex items-center gap-3 mb-4 border-b border-white/5 pb-3">
-                    <div className="relative flex h-3 w-3">
-                      <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-                      <span className="relative inline-flex rounded-full h-3 w-3 bg-emerald-500"></span>
+                  {/* Spotlight background effect */}
+                  <div className="absolute -inset-0.5 bg-gradient-to-br from-emerald-500 to-transparent opacity-20 group-hover:opacity-40 blur-xl transition-opacity duration-500 rounded-3xl"></div>
+
+                  {/* ID Badge Content */}
+                  <div className="relative glass-card !p-6 border-emerald-500/20 shadow-2xl flex flex-col">
+                    <div className="flex justify-between items-start mb-4 border-b border-white/10 pb-3">
+                      <span className="text-[10px] sm:text-xs font-mono text-emerald-500 uppercase tracking-widest flex items-center gap-2">
+                        <ShieldCheck weight="duotone" className="text-lg" />
+                        Operator ID
+                      </span>
+                      <span className="text-[10px] sm:text-xs font-mono text-slate-500">AUTH-LVL-1</span>
                     </div>
-                    <span className="text-sm font-mono text-emerald-500 uppercase tracking-widest">Live Status / Current Focus</span>
-                  </div>
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
-                    <div className="flex items-start gap-2">
-                      <MapPin className="text-emerald-500 mt-0.5 shrink-0" />
-                      <div>
-                        <p className="text-slate-400 font-mono text-xs mb-1">LOCATION</p>
-                        <p className="text-ivory font-medium">Milan / Genoa, Italy</p>
+
+                    <div className="flex gap-5 items-start">
+                      {/* Profile Photo */}
+                      <div className="w-24 sm:w-28 shrink-0 flex flex-col items-center">
+                        <div className="w-full aspect-[4/3] rounded-xl overflow-hidden border border-white/10 shadow-inner relative group-hover:border-emerald-500/50 transition-colors duration-500">
+                          <img
+                            src={`${import.meta.env.BASE_URL}images/profile_pic.jpg`}
+                            alt="Lorenzo Ghessi"
+                            className="w-full h-full object-cover"
+                          />
+                          <div className="absolute inset-0 bg-emerald-500 mix-blend-overlay opacity-0 group-hover:opacity-20 transition-opacity duration-500"></div>
+                        </div>
+                        <div className="mt-3 flex items-center justify-center gap-1.5 bg-emerald-500/10 px-2 py-1 rounded-full border border-emerald-500/20 w-full">
+                          <span className="relative flex h-1.5 w-1.5 shrink-0">
+                            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                            <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-emerald-500"></span>
+                          </span>
+                          <span className="text-[8px] sm:text-[9px] font-mono text-emerald-400 uppercase leading-none whitespace-nowrap overflow-hidden text-ellipsis">Jul 2026</span>
+                        </div>
                       </div>
-                    </div>
-                    <div className="flex items-start gap-2">
-                      <CalendarBlank className="text-emerald-500 mt-0.5 shrink-0" />
-                      <div>
-                        <p className="text-slate-400 font-mono text-xs mb-1">THESIS GOAL</p>
-                        <p className="text-ivory font-medium">Graduating April 2027</p>
-                      </div>
-                    </div>
-                    <div className="flex items-start gap-2 md:col-span-2 mt-2">
-                      <Crosshair className="text-emerald-500 mt-0.5 shrink-0" />
-                      <div>
-                        <p className="text-slate-400 font-mono text-xs mb-1">RESEARCH FOCUS</p>
-                        <p className="text-ivory font-medium leading-relaxed">Teleoperation systems with delay compensation @ Leonardo S.p.A.</p>
+
+                      {/* Meta Data */}
+                      <div className="flex flex-col gap-3 w-full justify-center py-1">
+                        <div>
+                          <p className="text-slate-500 font-mono text-[9px] uppercase mb-0.5">Location</p>
+                          <p className="text-ivory font-medium text-xs sm:text-sm flex items-center gap-1.5">
+                            <MapPin className="text-emerald-500 shrink-0" />
+                            Milano / Genova
+                          </p>
+                        </div>
+                        <div>
+                          <p className="text-slate-500 font-mono text-[9px] uppercase mb-0.5">Education</p>
+                          <p className="text-ivory font-medium text-xs sm:text-sm flex items-center gap-1.5">
+                            <Code className="text-emerald-500 shrink-0" />
+                            MSc PoliMi
+                          </p>
+                        </div>
+                        <div>
+                          <p className="text-slate-500 font-mono text-[9px] uppercase mb-0.5">Current Role</p>
+                          <p className="text-ivory font-medium text-xs sm:text-sm flex items-start sm:items-center gap-1.5 leading-tight">
+                            <TerminalWindow className="text-emerald-500 shrink-0 mt-0.5 sm:mt-0" />
+                            Robotics Research Intern @ Leonardo
+                          </p>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -102,98 +129,33 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Right Asset Area (Parallax) */}
-            <div className="hidden md:block absolute right-0 top-0 w-[41.666667%] h-full overflow-hidden bg-obsidian border-l border-white/5 z-0">
-              <motion.div 
+            {/* Right Asset Area (Parallax Yumi) */}
+            <div className="hidden lg:block absolute right-0 top-0 w-[55%] h-full z-0 pointer-events-none [mask-image:radial-gradient(ellipse_at_right,black_20%,transparent_80%)]">
+              <motion.div
                 style={{ y: yImage }}
                 className="absolute inset-0 w-full h-[120%] -top-[10%]"
               >
-                <img 
-                  src={`${import.meta.env.BASE_URL}images/robolab.jpg`} 
-                  alt="Robotic laboratory" 
-                  className="w-full h-full object-cover opacity-50 mix-blend-luminosity"
+                <img
+                  src={`${import.meta.env.BASE_URL}images/yumi.jpg`}
+                  alt="ABB Yumi Cobot"
+                  className="w-full h-full object-cover opacity-60 mix-blend-luminosity grayscale"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-obsidian via-transparent to-transparent"></div>
-                <div className="absolute inset-0 bg-gradient-to-l from-transparent to-obsidian"></div>
-              </motion.div>
-              
-              {/* Floating tech element */}
-              <motion.div 
-                initial={{ opacity: 0, scale: 0.8 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ delay: 1.0, type: 'spring' }}
-                className="absolute bottom-24 right-12 glass-card p-4 rounded-2xl max-w-xs border-emerald-500/20"
-              >
-                <div className="flex items-center gap-3 mb-2">
-                  <CodeBlock weight="duotone" className="text-emerald-500 text-xl" />
-                  <span className="text-sm font-mono text-ivory">Terminal</span>
-                </div>
-                <div className="font-mono text-xs text-slate-300 space-y-1">
-                  <p><span className="text-emerald-500">~</span> $ roslaunch teleop core.launch</p>
-                  <p className="text-slate-400">Loading model-mediated architecture...</p>
-                  <p className="text-emerald-500 animate-pulse">Compensation active. Latency: 45ms</p>
-                </div>
               </motion.div>
             </div>
           </div>
         </section>
 
-        {/* Core Metrics Bar */}
-        <section className="relative z-20 border-y border-white/10 bg-obsidian/80 backdrop-blur-md py-12">
-          <div className="max-w-7xl mx-auto px-4 md:px-12 lg:px-24">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center divide-y md:divide-y-0 md:divide-x divide-white/10">
-              <div className="flex flex-col items-center justify-center pt-4 md:pt-0 group">
-                <span className="text-4xl font-mono text-emerald-500 mb-2 group-hover:scale-105 transition-transform">42.195<span className="text-lg text-slate-400">km</span></span>
-                <span className="text-xs font-mono text-slate-300 uppercase tracking-widest group-hover:text-ivory transition-colors">Milano Marathon Finisher</span>
-              </div>
-              <div className="flex flex-col items-center justify-center pt-8 md:pt-0 group">
-                <span className="text-4xl font-mono text-emerald-500 mb-2 group-hover:scale-105 transition-transform">10k+</span>
-                <span className="text-xs font-mono text-slate-300 uppercase tracking-widest group-hover:text-ivory transition-colors">ROS / C++ LOC Active</span>
-              </div>
-              <div className="flex flex-col items-center justify-center pt-8 md:pt-0 group">
-                <span className="text-4xl font-mono text-emerald-500 mb-2 group-hover:scale-105 transition-transform">2</span>
-                <span className="text-xs font-mono text-slate-300 uppercase tracking-widest group-hover:text-ivory transition-colors">Universities (PoliMi + Chalmers)</span>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Bento Grid Section */}
-        <section className="py-32 px-4 md:px-12 lg:px-24 max-w-7xl mx-auto relative z-10">
-          <div className="mb-16">
+        {/* Bento Grid Section (Core Competencies) */}
+        <section className="py-24 px-4 md:px-12 lg:px-24 max-w-7xl mx-auto relative z-10 border-t border-white/5">
+          <div className="mb-12">
             <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-4 text-ivory">Core Competencies</h2>
-            <p className="text-slate-300 max-w-[60ch] leading-relaxed">Specialized in bridging advanced control theory with practical robotic deployments.</p>
+            <p className="text-slate-400 max-w-[60ch] leading-relaxed">A practical approach to robotics, complex control algorithms, and industrial hardware integration.</p>
           </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {/* Bento Card 1 */}
-            <motion.div 
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="glass-card md:col-span-2 group relative overflow-hidden border-white/5 hover:border-emerald-500/30 transition-colors duration-500"
-            >
-              <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-              <h3 className="text-xl font-bold mb-3 text-ivory">ROS/C++ Teleoperation</h3>
-              <p className="text-slate-300 mb-6 leading-relaxed">Designed model-mediated teleoperation architecture to compensate for variable communication delays.</p>
-              <div className="flex flex-wrap gap-2 font-mono text-xs text-emerald-500">
-                <span className="px-2 py-1 bg-emerald-500/10 border border-emerald-500/20 rounded">ROS Noetic</span>
-                <span className="px-2 py-1 bg-emerald-500/10 border border-emerald-500/20 rounded">C++</span>
-                <span className="px-2 py-1 bg-emerald-500/10 border border-emerald-500/20 rounded">Control Systems</span>
-              </div>
-            </motion.div>
-            
-            {/* Bento Card 2 */}
-            <motion.div 
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.1 }}
-              className="glass-card group border-white/5 hover:border-emerald-500/30 transition-colors duration-500"
-            >
-              <h3 className="text-xl font-bold mb-3 text-ivory">Industrial Robotics</h3>
-              <p className="text-slate-300 leading-relaxed">ABB RobotStudio, PLC commissioning, and computer vision integration for quality inspection.</p>
-            </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <ROSTerminalCard />
+            <StepResponseCard />
+            <SFCDiagramCard />
           </div>
         </section>
       </main>

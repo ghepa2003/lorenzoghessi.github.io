@@ -8,6 +8,26 @@
   
   --font-sans: 'Geist', 'Inter', sans-serif;
   --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+  
+  --animate-marquee-vertical: marquee-vertical 25s linear infinite;
+  --animate-marquee-horizontal: marquee-horizontal 30s linear infinite;
+  --animate-marquee-horizontal-reverse: marquee-horizontal-reverse 35s linear infinite;
+  --animate-marquee-horizontal-fast: marquee-horizontal 20s linear infinite;
+
+  @keyframes marquee-vertical {
+    from { transform: translateY(0); }
+    to { transform: translateY(-50%); }
+  }
+
+  @keyframes marquee-horizontal {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+
+  @keyframes marquee-horizontal-reverse {
+    from { transform: translateX(-50%); }
+    to { transform: translateX(0); }
+  }
 }
 
 @layer base {

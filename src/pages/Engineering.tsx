@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { PageTransition } from '../components/PageTransition';
-import { GraduationCap } from '@phosphor-icons/react';
+import { GraduationCap, ArrowRight, FilePdf } from '@phosphor-icons/react';
 
 export default function Engineering() {
   const experiences = [
@@ -40,21 +40,37 @@ export default function Engineering() {
   const projects = [
     {
       title: 'Flexible Joint Control',
-      tools: 'MATLAB/Simulink',
+      tags: ['MATLAB', 'Simulink', 'Control Systems'],
       period: '02/2026 – 06/2026',
-      desc: 'Experimental parameter identification (friction, spring stiffness) and synthesis of frequency-domain and state-space controllers (LQR, H∞, MRAC, SMC) for precise tip positioning under uncertainty.'
+      desc: 'Experimental parameter identification (friction, spring stiffness) and synthesis of frequency-domain and state-space controllers (LQR, H∞, MRAC, SMC) for precise tip positioning under uncertainty.',
+      image: 'https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80&w=800'
     },
     {
       title: 'Trajectory control for a Mobile Robot',
-      tools: 'ROS/C++',
+      tags: ['ROS', 'C++', 'Linux'],
       period: '10/2025 – 11/2025',
-      desc: 'Built a Turtlebot simulator in Linux/ROS Noetic (Boost Odeint); designed a PI tracking controller with feedback linearization and velocity feed-forward.'
+      desc: 'Built a Turtlebot simulator in Linux/ROS Noetic (Boost Odeint); designed a PI tracking controller with feedback linearization and velocity feed-forward.',
+      image: 'https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&q=80&w=800'
     },
     {
       title: 'Drone Real-Time Control',
-      tools: 'C/C++, FreeRTOS',
+      tags: ['C/C++', 'FreeRTOS', 'Embedded'],
       period: '04/2025 – 06/2025',
-      desc: 'Developed dynamic model in Simscape, synthesized LQR controller in MATLAB/Simulink, and implemented control code on real hardware using an RTOS architecture.'
+      desc: 'Developed dynamic model in Simscape, synthesized LQR controller in MATLAB/Simulink, and implemented control code on real hardware using an RTOS architecture.',
+      image: 'https://images.unsplash.com/photo-1527430253228-e93688616381?auto=format&fit=crop&q=80&w=800'
+    }
+  ];
+
+  const articles = [
+    {
+      title: 'Un capitolo chiuso: 4 anni al RoboLab di Assolombarda',
+      desc: 'Riflessioni su cosa significa insegnare la robotica a oltre 1000 studenti e coordinare un team tecnico.',
+      tags: ['Leadership', 'Mentorship']
+    },
+    {
+      title: 'Oltre la latenza: la mia esperienza in Leonardo S.p.A.',
+      desc: 'La vera sfida della teleoperazione non è solo il codice C++, ma testare l\'hardware reale e imparare a lavorare in un team di ricerca.',
+      tags: ['R&D', 'Growth']
     }
   ];
 
@@ -63,35 +79,48 @@ export default function Engineering() {
       <main className="min-h-[100dvh] pt-32 pb-24 px-4 md:px-12 lg:px-24 max-w-[1400px] mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-24">
           
-          {/* Header Column */}
+          {/* Header Column (Sticky Sidebar) */}
           <div className="lg:col-span-4">
             <div className="sticky top-32">
               <h1 className="text-4xl md:text-5xl font-bold tracking-tighter mb-4 text-ivory">Engineering<br/>Log.</h1>
               <p className="text-slate-300 mb-8 max-w-[40ch] leading-relaxed">
-                Technical deployments, multivariable control synthesis, and embedded real-time systems.
+                A structured breakdown of my technical background, academic path, and engineering projects in robotics and control automation.
               </p>
               
-              <div className="space-y-4 font-mono text-xs text-slate-300">
+              <div className="space-y-4 font-mono text-xs text-slate-300 mb-12">
                 <div className="flex justify-between border-b border-white/5 pb-2">
                   <span>System.Status</span>
                   <span className="text-emerald-500">Nominal</span>
                 </div>
                 <div className="flex justify-between border-b border-white/5 pb-2">
-                  <span>Uptime</span>
-                  <span className="text-ivory font-bold">99.99%</span>
+                  <span>Location</span>
+                  <span className="text-ivory font-bold">Genoa, IT</span>
                 </div>
                 <div className="flex justify-between border-b border-white/5 pb-2">
-                  <span>Active.Tasks</span>
-                  <span className="text-ivory font-bold">[Teleoperation, ROS]</span>
+                  <span>Active.Focus</span>
+                  <span className="text-ivory font-bold">[ROS, Control, PLC]</span>
                 </div>
               </div>
+
+              {/* Download CV Button */}
+              <motion.a 
+                href={`${import.meta.env.BASE_URL}Lorenzo_Ghessi_CV.pdf`}
+                target="_blank"
+                rel="noopener noreferrer"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="inline-flex items-center gap-3 px-6 py-3 rounded-full bg-obsidian border border-emerald-500/50 text-emerald-500 font-medium hover:bg-emerald-500 hover:text-obsidian transition-colors shadow-[0_0_15px_rgba(16,185,129,0.1)] hover:shadow-[0_0_20px_rgba(16,185,129,0.3)]"
+              >
+                <FilePdf weight="duotone" className="text-xl" />
+                <span>Download Full CV (.pdf)</span>
+              </motion.a>
             </div>
           </div>
 
-          {/* Data Column */}
+          {/* Data Column (Scrolling Right Panel) */}
           <div className="lg:col-span-8 space-y-24">
 
-            {/* Education Section (Cockpit Mode) */}
+            {/* Education Section */}
             <section>
               <h2 className="text-xs font-mono text-slate-400 uppercase tracking-widest mb-8 border-b border-white/10 pb-2">00 // Education</h2>
               <motion.div 
@@ -104,29 +133,30 @@ export default function Engineering() {
                   <GraduationCap className="text-emerald-500 text-xl" />
                   <h3 className="text-lg font-bold text-ivory">Academic Trajectory</h3>
                 </div>
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6 divide-y md:divide-y-0 md:divide-x divide-white/10">
-                  <div className="pt-4 md:pt-0">
-                    <p className="font-mono text-xs text-emerald-500 mb-1">2024 - PRESENT</p>
-                    <p className="font-bold text-ivory mb-1">MSc Automation & Control</p>
-                    <p className="text-sm text-slate-300">Polytechnic University of Milan</p>
+                <div className="grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-white/10">
+                  <div className="py-4 md:py-0 md:pr-6 flex flex-col h-full">
+                    <p className="font-mono text-xs text-emerald-500 mb-1">2016 — 2021</p>
+                    <p className="font-bold text-ivory mb-1">Mechatronics Diploma</p>
+                    <p className="text-sm text-slate-300 font-medium">ITT E. Breda</p>
+                    <p className="text-sm text-slate-400 mt-3 leading-relaxed flex-grow">
+                      Core foundations in PLC programming, electronics, and industrial automation networks.
+                    </p>
                   </div>
-                  <div className="pt-4 md:pt-0 md:pl-6">
+                  <div className="py-4 md:py-0 md:px-6 flex flex-col h-full">
+                    <p className="font-mono text-xs text-emerald-500 mb-1">2021 — Present</p>
+                    <p className="font-bold text-ivory mb-1">BSc & MSc</p>
+                    <p className="text-sm text-slate-300 font-medium">Politecnico di Milano</p>
+                    <p className="text-sm text-slate-400 mt-3 leading-relaxed flex-grow">
+                      Automation and Control Engineering with specialization in robotics and industrial automation.
+                    </p>
+                  </div>
+                  <div className="py-4 md:py-0 md:pl-6 flex flex-col h-full">
                     <p className="font-mono text-xs text-emerald-500 mb-1">2025</p>
-                    <p className="font-bold text-ivory mb-1">Erasmus+</p>
-                    <p className="text-sm text-slate-300">Chalmers University of Technology</p>
-                  </div>
-                  <div className="pt-4 md:pt-0 md:pl-6">
-                    <p className="font-mono text-xs text-emerald-500 mb-1">2026 - PRESENT</p>
-                    <p className="font-bold text-ivory mb-1">Master Thesis</p>
-                    <p className="text-sm text-slate-300">Leonardo S.p.A.</p>
-                  </div>
-                </div>
-                <div className="mt-6 pt-4 border-t border-white/5">
-                  <p className="font-mono text-xs text-slate-400 mb-3">CORE COMPETENCIES</p>
-                  <div className="flex flex-wrap gap-2">
-                    <span className="font-mono text-xs bg-emerald-500/10 border border-emerald-500/20 text-emerald-500 px-2 py-1 rounded">Multivariable control</span>
-                    <span className="font-mono text-xs bg-emerald-500/10 border border-emerald-500/20 text-emerald-500 px-2 py-1 rounded">Real-time systems</span>
-                    <span className="font-mono text-xs bg-emerald-500/10 border border-emerald-500/20 text-emerald-500 px-2 py-1 rounded">Teleoperation</span>
+                    <p className="font-bold text-ivory mb-1">Erasmus+ Program</p>
+                    <p className="text-sm text-slate-300 font-medium">Göteborg, Sweden</p>
+                    <p className="text-sm text-slate-400 mt-3 leading-relaxed flex-grow">
+                      Chalmers University of Technology. Specializing in advanced robotics and international technical collaboration.
+                    </p>
                   </div>
                 </div>
               </motion.div>
@@ -166,7 +196,7 @@ export default function Engineering() {
               </div>
             </section>
 
-            {/* Projects Section */}
+            {/* Key Projects Section */}
             <section>
               <h2 className="text-xs font-mono text-slate-400 uppercase tracking-widest mb-8 border-b border-white/10 pb-2">02 // Key Projects</h2>
               <div className="flex flex-col space-y-0 divide-y divide-white/5 border-t border-white/5">
@@ -179,15 +209,60 @@ export default function Engineering() {
                     className="py-8 group hover:bg-emerald-500/5 px-4 -mx-4 transition-colors rounded-xl"
                   >
                     <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-4">
-                      <h3 className="text-lg font-bold text-ivory group-hover:text-emerald-500 transition-colors">{proj.title}</h3>
-                      <div className="flex gap-3 text-xs font-mono">
-                        <span className="text-emerald-500">{proj.tools}</span>
-                        <span className="text-slate-400">{proj.period}</span>
+                      <div className="flex flex-col md:flex-row md:items-center gap-4">
+                        <h3 className="text-lg font-bold text-ivory group-hover:text-emerald-500 transition-colors">{proj.title}</h3>
+                        {/* Tech Badges */}
+                        <div className="flex flex-wrap gap-2">
+                          {proj.tags.map((tag, j) => (
+                            <span key={j} className="font-mono text-[10px] text-emerald-500 bg-emerald-500/10 border border-emerald-500/20 px-2 py-0.5 rounded">
+                              {tag}
+                            </span>
+                          ))}
+                        </div>
                       </div>
+                      <span className="text-xs font-mono text-slate-400 shrink-0">{proj.period}</span>
                     </div>
                     <p className="text-slate-300 text-sm max-w-[80ch] leading-relaxed">
                       {proj.desc}
                     </p>
+                  </motion.div>
+                ))}
+              </div>
+            </section>
+
+            {/* Experience Notes Section */}
+            <section>
+              <h2 className="text-xs font-mono text-slate-400 uppercase tracking-widest mb-8 border-b border-white/10 pb-2">03 // Experience Notes</h2>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                {articles.map((article, i) => (
+                  <motion.div 
+                    key={i}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    whileHover={{ y: -5 }}
+                    viewport={{ once: true }}
+                    className={`glass-card group relative overflow-hidden border border-white/5 hover:border-emerald-500/30 transition-all duration-500 p-6 flex flex-col cursor-pointer shadow-lg hover:shadow-xl hover:shadow-emerald-500/5 ${i === 0 ? 'md:col-span-2' : ''}`}
+                  >
+                    {/* Spotlight radial gradient */}
+                    <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,rgba(16,185,129,0.1),transparent_70%)] opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none"></div>
+                    
+                    <div className="relative z-10 flex flex-col h-full">
+                      <div className="flex flex-wrap gap-2 mb-4">
+                        {article.tags.map((tag, j) => (
+                          <span key={j} className="font-mono text-[10px] text-slate-400 border border-slate-700 px-2 py-0.5 rounded uppercase">
+                            {tag}
+                          </span>
+                        ))}
+                      </div>
+                      <h3 className="text-xl md:text-2xl font-bold text-ivory mb-3 group-hover:text-emerald-500 transition-colors">{article.title}</h3>
+                      <p className="text-slate-300 text-sm leading-relaxed mb-6 flex-grow">
+                        {article.desc}
+                      </p>
+                      <div className="mt-auto flex items-center gap-2 text-emerald-500 text-sm font-medium">
+                        <span>Read Entry</span>
+                        <ArrowRight className="group-hover:translate-x-1 transition-transform" />
+                      </div>
+                    </div>
                   </motion.div>
                 ))}
               </div>

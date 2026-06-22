@@ -4,6 +4,7 @@ import { Navbar } from './components/Navbar';
 import Home from './pages/Home';
 import Engineering from './pages/Engineering';
 import LifeAndLogbook from './pages/LifeAndLogbook';
+import ReadingArchive from './pages/ReadingArchive';
 import { useEffect } from 'react';
 
 function App() {
@@ -12,7 +13,7 @@ function App() {
   // Dynamic background logic based on route
   useEffect(() => {
     const root = document.documentElement;
-    if (location.pathname === '/life-and-logbook') {
+    if (location.pathname === '/life-and-logbook' || location.pathname === '/reading-archive') {
       // Light Mode
       root.style.setProperty('--bg-primary', '#FAF8F5'); // Ivory
       root.style.setProperty('--text-primary', '#0D0D12'); // Obsidian
@@ -35,6 +36,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/engineering" element={<Engineering />} />
           <Route path="/life-and-logbook" element={<LifeAndLogbook />} />
+          <Route path="/reading-archive" element={<ReadingArchive />} />
         </Routes>
       </AnimatePresence>
     </div>
