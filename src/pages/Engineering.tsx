@@ -4,6 +4,7 @@ import { GraduationCap, ArrowRight, FilePdf } from '@phosphor-icons/react';
 
 export default function Engineering() {
   const experiences = [
+    /* TODO: Uncomment to restore Leonardo S.p.A. experience when ready
     {
       company: 'Leonardo S.p.A.',
       role: 'Robotics Research Intern',
@@ -14,6 +15,7 @@ export default function Engineering() {
         'Developed and validated control algorithms for object manipulation with delayed feedback, integrating hardware-in-the-loop testing on a real robotic system.'
       ]
     },
+    */
     {
       company: 'Assolombarda',
       role: 'Laboratory Coordinator',
@@ -58,6 +60,27 @@ export default function Engineering() {
       period: '04/2025 – 06/2025',
       desc: 'Developed dynamic model in Simscape, synthesized LQR controller in MATLAB/Simulink, and implemented control code on real hardware using an RTOS architecture.',
       image: 'https://images.unsplash.com/photo-1527430253228-e93688616381?auto=format&fit=crop&q=80&w=800'
+    },
+    {
+      title: 'Vision-Based Assistance for Memory Card Game',
+      tags: ['Computer Vision', 'Python', 'Image Processing'],
+      period: '05/2025',
+      desc: "Developed a vision system to guide and automate a game of 'Memory'. Implemented advanced image analysis algorithms for precise card detection and state tracking, achieving a final recognition accuracy of 99.4%.",
+      image: 'https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80&w=800'
+    },
+    {
+      title: 'Electric Drive Systems Modeling',
+      tags: ['MATLAB / Simulink', 'Electric Drives', 'Dynamic Systems'],
+      period: '01/2025 – 03/2025',
+      desc: 'Modeled and analyzed electric machine drive systems, including PMDC, PMSM, and Induction Motors. Simulated transient performance and operability to evaluate the dynamics and control loops of core electric propulsion components.',
+      image: 'https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80&w=800'
+    },
+    {
+      title: 'Industrial Robotic Cell 4.0',
+      tags: ['PLC Programming', 'ABB RobotStudio', 'Industrial Networks'],
+      period: '03/2021 – 06/2021',
+      desc: 'Designed and programmed a complete pick-and-place cell by integrating an ABB industrial manipulator, a Siemens S7-1200 PLC, and a custom HMI dashboard, interfacing them with a computer vision system for real-time quality inspection.',
+      image: 'https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80&w=800'
     }
   ];
 
@@ -87,20 +110,6 @@ export default function Engineering() {
                 A structured breakdown of my technical background, academic path, and engineering projects in robotics and control automation.
               </p>
               
-              <div className="space-y-4 font-mono text-xs text-slate-300 mb-10">
-                <div className="flex justify-between border-b border-white/5 pb-2">
-                  <span>System.Status</span>
-                  <span className="text-emerald-500">Nominal</span>
-                </div>
-                <div className="flex justify-between border-b border-white/5 pb-2">
-                  <span>Location</span>
-                  <span className="text-ivory font-bold">Genoa, IT</span>
-                </div>
-                <div className="flex justify-between border-b border-white/5 pb-2">
-                  <span>Active.Focus</span>
-                  <span className="text-ivory font-bold">[ROS, Control, PLC]</span>
-                </div>
-              </div>
 
               {/* Technical Stack */}
               <div className="mb-12">
@@ -133,9 +142,8 @@ export default function Engineering() {
 
               {/* Download CV Button */}
               <motion.a 
-                href={`${import.meta.env.BASE_URL}Lorenzo_Ghessi_CV.pdf`}
-                target="_blank"
-                rel="noopener noreferrer"
+                href={`${import.meta.env.BASE_URL}ghessi_CV.pdf`}
+                download="Lorenzo_Ghessi_CV.pdf"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 className="inline-flex items-center gap-3 px-6 py-3 rounded-full bg-obsidian border border-emerald-500/50 text-emerald-500 font-medium hover:bg-emerald-500 hover:text-obsidian transition-colors shadow-[0_0_15px_rgba(16,185,129,0.1)] hover:shadow-[0_0_20px_rgba(16,185,129,0.3)]"
@@ -241,9 +249,9 @@ export default function Engineering() {
                       <div className="flex flex-col md:flex-row md:items-center gap-4">
                         <h3 className="text-lg font-bold text-ivory group-hover:text-emerald-500 transition-colors">{proj.title}</h3>
                         {/* Tech Badges */}
-                        <div className="flex flex-wrap gap-2">
+                        <div className="flex flex-row items-center gap-2">
                           {proj.tags.map((tag, j) => (
-                            <span key={j} className="font-mono text-[10px] text-emerald-500 bg-emerald-500/10 border border-emerald-500/20 px-2 py-0.5 rounded">
+                            <span key={j} className="font-mono text-[10px] text-emerald-500 bg-emerald-500/10 border border-emerald-500/20 px-2 py-0.5 rounded whitespace-nowrap">
                               {tag}
                             </span>
                           ))}

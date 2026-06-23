@@ -4,7 +4,7 @@ import { House, Robot, PersonArmsSpread } from '@phosphor-icons/react';
 
 export const Navbar = () => {
   const location = useLocation();
-  const isLightMode = location.pathname === '/life-and-logbook';
+  const isLightMode = location.pathname === '/life';
 
   return (
     <nav className="fixed top-0 left-0 w-full z-50 px-4 py-6 pointer-events-none">
@@ -39,11 +39,11 @@ export const Navbar = () => {
             <span className="hidden sm:inline">Engineering</span>
           </NavLink>
           <NavLink 
-            to="/life-and-logbook" 
+            to="/life" 
             className={({ isActive }) => `flex items-center gap-2 text-sm font-medium transition-colors ${isActive ? 'text-emerald-500' : isLightMode ? 'text-slate-custom hover:text-obsidian' : 'text-slate-custom hover:text-ivory'}`}
           >
             <PersonArmsSpread weight="duotone" />
-            <span className="hidden sm:inline">Life & Logbook</span>
+            <span className="hidden sm:inline">Life</span>
           </NavLink>
         </motion.div>
 

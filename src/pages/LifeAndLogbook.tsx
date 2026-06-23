@@ -83,7 +83,7 @@ export default function LifeAndLogbook() {
               Off the <span className="text-emerald-500">Grid.</span>
             </h1>
             <p className="text-lg text-slate-600 max-w-[60ch] md:mx-0 mx-auto leading-relaxed">
-              You can't find me on Instagram. But if you're interested in getting to know me better, you're in the right place. This space is the only official Logbook of my personal journey, balancing endurance sports, curiosity, and team dynamics beyond the code.
+              No Instagram feed, no corporate filter. Just a space dedicated to who I am when the screen is off. Sharing the experiences, endurance training, and curiosities that shape my life beyond academics and engineering.
             </p>
           </motion.div>
         </main>
@@ -106,12 +106,14 @@ export default function LifeAndLogbook() {
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                className="md:col-span-7 bg-white border border-slate-custom/10 p-8 rounded-[2rem] hover:shadow-xl hover:border-emerald-500/30 transition-all duration-300 flex flex-col justify-center"
+                className="md:col-span-4 bg-white border border-slate-custom/10 p-8 rounded-[2rem] hover:shadow-xl hover:border-emerald-500/30 transition-all duration-300 flex flex-col justify-start"
               >
-                <span className="text-[10px] font-mono text-emerald-500 uppercase tracking-widest mb-4">1 — ON THE BEGINNING</span>
-                <h3 className="text-xl md:text-2xl font-bold mb-4 text-obsidian">Testing the real boundaries</h3>
+                <div className="min-h-[40px] mb-2">
+                  <span className="text-[10px] font-mono text-emerald-500 uppercase tracking-widest">1 — ON PERSEVERANCE</span>
+                </div>
+                <h3 className="text-xl md:text-2xl font-bold mb-4 text-obsidian">The habit of building step by step</h3>
                 <p className="text-sm md:text-base text-slate-600 leading-relaxed">
-                  I started just to challenge myself, to find out where my limits actually were—not the ones I imagined, but the real ones. I wanted to understand what can be achieved through pure commitment, dedication, and discipline, even when everyone around assumes it is impossible. That discovery was the starting point for everything else.
+                  While doing sports, you quickly learn that big goals aren't achieved through sudden spikes of adrenaline, but through weeks of invisible, boring consistency. The final outcome remains completely hidden until you cross the finish line; until then, it’s just about trusting the daily repetition and keeping a steady cadence when the task gets heavy. It builds a simple mindset: you accept the slow process, knowing that results only appear at the very end.
                 </p>
               </motion.div>
 
@@ -121,12 +123,14 @@ export default function LifeAndLogbook() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.1 }}
-                className="md:col-span-5 bg-white border border-slate-custom/10 p-8 rounded-[2rem] hover:shadow-xl hover:border-emerald-500/30 transition-all duration-300 flex flex-col justify-center"
+                className="md:col-span-4 bg-white border border-slate-custom/10 p-8 rounded-[2rem] hover:shadow-xl hover:border-emerald-500/30 transition-all duration-300 flex flex-col justify-start"
               >
-                <span className="text-[10px] font-mono text-emerald-500 uppercase tracking-widest mb-4">2 — ON PERSEVERANCE</span>
-                <h3 className="text-xl md:text-2xl font-bold mb-4 text-obsidian">On the road, when your legs beg you to stop</h3>
+                <div className="min-h-[40px] mb-2">
+                  <span className="text-[10px] font-mono text-emerald-500 uppercase tracking-widest">2 — ON THE DIALOGUE BETWEEN INDIVIDUAL AND TEAM</span>
+                </div>
+                <h3 className="text-xl md:text-2xl font-bold mb-4 text-obsidian">Two kinds of strength, entirely complementary</h3>
                 <p className="text-sm md:text-base text-slate-600 leading-relaxed">
-                  At the absolute lowest point of a race, what keeps you pushing isn't leg strength—it’s the memory of every single sunrise ride and the workouts you never missed. I trained specifically to endure that exact moment, and I knew it. That awareness, more than physical fitness, is what gets me across the finish line.
+                  Team sports taught me how to rely on others and be reliable in return collaboration, shared goals, and mutual trust. Individual endurance builds something different: inner discipline and the dialogue with your own thoughts when no one is there to push you. Neither represents me more than the other. They speak to each other, and I think both are necessary.
                 </p>
               </motion.div>
 
@@ -136,43 +140,30 @@ export default function LifeAndLogbook() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.2 }}
-                className="md:col-span-5 bg-white border border-slate-custom/10 p-8 rounded-[2rem] hover:shadow-xl hover:border-emerald-500/30 transition-all duration-300 flex flex-col justify-center"
+                className="md:col-span-4 bg-white border border-slate-custom/10 p-8 rounded-[2rem] hover:shadow-xl hover:border-emerald-500/30 transition-all duration-300 flex flex-col justify-start"
               >
-                <span className="text-[10px] font-mono text-emerald-500 uppercase tracking-widest mb-4">3 — ON THE DIALOGUE BETWEEN INDIVIDUAL AND TEAM</span>
-                <h3 className="text-xl md:text-2xl font-bold mb-4 text-obsidian">Two kinds of strength, entirely complementary</h3>
+                <div className="min-h-[40px] mb-2">
+                  <span className="text-[10px] font-mono text-emerald-500 uppercase tracking-widest">3 — THE LESSON OF THE CRAMPS</span>
+                </div>
+                <h3 className="text-xl md:text-2xl font-bold mb-4 text-obsidian">The value of structured preparation</h3>
                 <p className="text-sm md:text-base text-slate-600 leading-relaxed">
-                  Team sports taught me how to rely on others and be reliable in return—collaboration, shared goals, and mutual trust. Individual endurance builds something different: inner discipline and the dialogue with your own thoughts when no one is there to push you. Neither represents me more than the other. They speak to each other, and I need both.
+                  A marathon, a forced pace pushed slightly beyond my preparation, and severe cramps in the final stretch. While it ended well, it left me with a clear lesson on the importance of strict organization and method: talent and willpower can only get you so far without a structured plan. Real performance, whether on the road or inside a lab, relies on respecting the process, managing resources smartly, and avoiding reckless shortcuts.
                 </p>
               </motion.div>
 
-              {/* Card 4 */}
+              {/* Card 4 (Full Width) */}
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.3 }}
-                className="md:col-span-7 bg-white border border-slate-custom/10 p-8 rounded-[2rem] hover:shadow-xl hover:border-emerald-500/30 transition-all duration-300 flex flex-col justify-center"
-              >
-                <span className="text-[10px] font-mono text-emerald-500 uppercase tracking-widest mb-4">4 — THE LESSON OF THE CRAMPS</span>
-                <h3 className="text-xl md:text-2xl font-bold mb-4 text-obsidian">When the plan knows better than you do</h3>
-                <p className="text-sm md:text-base text-slate-600 leading-relaxed">
-                  A marathon, a forced pace pushed slightly beyond what I had prepared for, and severe cramps in the final stretch. It ended well, but it left me with a lesson that reaches far beyond running: sometimes deviating from the plan pays off, but not always—and the difference lies in respecting your limits. More humility, fewer reckless moves.
-                </p>
-              </motion.div>
-
-              {/* Card 5 (Full Width) */}
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.4 }}
                 className="md:col-span-12 bg-obsidian text-ivory border border-obsidian p-8 md:p-12 rounded-[2rem] hover:shadow-2xl hover:shadow-emerald-500/10 transition-all duration-500 flex flex-col md:flex-row gap-8 items-start md:items-center justify-between group cursor-default"
               >
                 <div className="max-w-3xl">
-                  <span className="text-[10px] font-mono text-emerald-400 uppercase tracking-widest mb-4 block">5 — ON TODAY, WITHOUT A FINISH LINE</span>
+                  <span className="text-[10px] font-mono text-emerald-400 uppercase tracking-widest mb-4 block">4 — ON TODAY, WITHOUT A FINISH LINE</span>
                   <h3 className="text-2xl md:text-3xl font-bold mb-4 text-white">Just a regular run, with nothing to prove</h3>
                   <p className="text-sm md:text-base text-slate-400 leading-relaxed">
-                    Not every session needs a finish line. Most of them are simply about this: clearing the mind, feeling good, staying sharp, and enjoying nature. And when shared with others, these moments become common ground. Nothing to prove—just the genuine need to be out there.
+                    Not every session needs a finish line. Most of them are simply about clearing the mind, feeling good, staying sharp, and enjoying nature. And when shared with others, these moments become common ground. Nothing to prove, just the genuine need to be out there.
                   </p>
                 </div>
               </motion.div>
@@ -180,10 +171,10 @@ export default function LifeAndLogbook() {
             </div>
           </section>
 
-          {/* Intellectual Inputs */}
+          {/* Sources of curiosity */}
           <section className="mb-32">
             <div className="flex items-center justify-between mb-12">
-              <h2 className="text-2xl font-bold text-obsidian">Intellectual Inputs</h2>
+              <h2 className="text-2xl font-bold text-obsidian">Sources of curiosity</h2>
               <div className="h-px bg-slate-custom/10 flex-grow ml-8"></div>
             </div>
 
@@ -201,13 +192,13 @@ export default function LifeAndLogbook() {
                     <BookOpen className="text-xl text-emerald-500" weight="duotone" />
                   </div>
                   <div>
-                    <h3 className="text-sm font-mono text-emerald-600 uppercase tracking-widest">Library</h3>
-                    <h4 className="text-lg font-bold text-obsidian">Reading Archive</h4>
+                    <h3 className="text-sm font-mono text-emerald-600 uppercase tracking-widest">BOOKS</h3>
+                    <h4 className="text-lg font-bold text-obsidian">What I read</h4>
                   </div>
                 </div>
 
                 <p className="text-sm text-slate-600 leading-relaxed mb-6">
-                  Analog breaks. A collection of books I pick up when the screen gets too loud—ranging from classic narratives to essays on how we behave.
+                  When the screen gets too loud, I often find myself with a book in hand. A collection of stories and essays that keep me company: ranging from classic narratives to reflections on how we function, how we think, and how we construct meaning.
                 </p>
 
                 <div className="bg-slate-50 border border-slate-100 p-5 rounded-xl mb-4 flex-grow">
@@ -238,13 +229,13 @@ export default function LifeAndLogbook() {
                     <Lightbulb className="text-xl text-emerald-500" weight="duotone" />
                   </div>
                   <div>
-                    <h3 className="text-sm font-mono text-emerald-600 uppercase tracking-widest">Knowledge Stack</h3>
-                    <h4 className="text-lg font-bold text-obsidian">Continuous Learning</h4>
+                    <h3 className="text-sm font-mono text-emerald-600 uppercase tracking-widest">SOURCES</h3>
+                    <h4 className="text-lg font-bold text-obsidian">What I listen to</h4>
                   </div>
                 </div>
 
                 <p className="text-sm text-slate-600 leading-relaxed mb-6">
-                  Driven by relentless curiosity. These are the channels, podcasts, and newsletters I dive into to feed my mind outside the lab.
+                  Channels, podcasts, and newsletters I follow to feed my curiosity: economists, historians, storytellers, and minds that think deeply about how the world works.
                 </p>
 
                 {/* Infinite Horizontal Marquee Container */}
@@ -293,64 +284,67 @@ export default function LifeAndLogbook() {
           </section>
 
           {/* Logbook / Blog Section */}
-          <section>
-            <div className="flex items-center justify-between mb-12">
-              <h2 className="text-2xl font-bold text-obsidian">Logbook Entries</h2>
-              <div className="h-px bg-slate-custom/10 flex-grow ml-8"></div>
-            </div>
+          {/* TODO: Set to true / Uncomment to render articles when the first real post is written */}
+          {false && (
+            <section>
+              <div className="flex items-center justify-between mb-12">
+                <h2 className="text-2xl font-bold text-obsidian">Logbook Entries</h2>
+                <div className="h-px bg-slate-custom/10 flex-grow ml-8"></div>
+              </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {LOGBOOK_POSTS.map((post, idx) => (
-                <motion.a
-                  href={post.link}
-                  key={post.id}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: idx * 0.1 }}
-                  className="group flex flex-col bg-white rounded-[2rem] border border-slate-200 overflow-hidden hover:-translate-y-1 hover:shadow-[0_20px_40px_-15px_rgba(0,0,0,0.1)] hover:border-emerald-500/50 transition-all duration-300 relative"
-                >
-                  {/* Spotlight Gradient on Hover */}
-                  <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/0 via-emerald-500/0 to-emerald-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {LOGBOOK_POSTS.map((post, idx) => (
+                  <motion.a
+                    href={post.link}
+                    key={post.id}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: idx * 0.1 }}
+                    className="group flex flex-col bg-white rounded-[2rem] border border-slate-200 overflow-hidden hover:-translate-y-1 hover:shadow-[0_20px_40px_-15px_rgba(0,0,0,0.1)] hover:border-emerald-500/50 transition-all duration-300 relative"
+                  >
+                    {/* Spotlight Gradient on Hover */}
+                    <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/0 via-emerald-500/0 to-emerald-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
 
-                  <div className="h-48 overflow-hidden relative border-b border-slate-100">
-                    <img
-                      src={post.image}
-                      alt={post.title}
-                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                    />
-                    <div className="absolute top-4 left-4">
-                      <span className="px-3 py-1 bg-ivory/90 backdrop-blur-md border border-white/50 rounded-full text-xs font-mono text-emerald-600 font-bold shadow-sm">
-                        {post.category}
-                      </span>
-                    </div>
-                  </div>
-
-                  <div className="p-8 flex flex-col flex-grow z-10 relative">
-                    <div className="flex justify-between items-center text-xs text-slate-500 font-mono mb-4">
-                      <span>{post.date}</span>
-                      <span>{post.readTime}</span>
-                    </div>
-
-                    <h3 className="text-xl font-bold text-obsidian mb-3 group-hover:text-emerald-600 transition-colors">
-                      {post.title}
-                    </h3>
-
-                    <p className="text-slate-600 text-sm leading-relaxed mb-8 flex-grow">
-                      {post.excerpt}
-                    </p>
-
-                    <div className="mt-auto flex justify-between items-center border-t border-slate-100 pt-5">
-                      <span className="text-sm font-bold text-obsidian group-hover:text-emerald-600 transition-colors">Read Entry</span>
-                      <div className="w-8 h-8 rounded-full bg-ivory flex items-center justify-center text-emerald-500 group-hover:bg-emerald-500 group-hover:text-white transition-colors">
-                        <ArrowRight weight="bold" className="group-hover:translate-x-0.5 transition-transform" />
+                    <div className="h-48 overflow-hidden relative border-b border-slate-100">
+                      <img
+                        src={post.image}
+                        alt={post.title}
+                        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                      />
+                      <div className="absolute top-4 left-4">
+                        <span className="px-3 py-1 bg-ivory/90 backdrop-blur-md border border-white/50 rounded-full text-xs font-mono text-emerald-600 font-bold shadow-sm">
+                          {post.category}
+                        </span>
                       </div>
                     </div>
-                  </div>
-                </motion.a>
-              ))}
-            </div>
-          </section>
+
+                    <div className="p-8 flex flex-col flex-grow z-10 relative">
+                      <div className="flex justify-between items-center text-xs text-slate-500 font-mono mb-4">
+                        <span>{post.date}</span>
+                        <span>{post.readTime}</span>
+                      </div>
+
+                      <h3 className="text-xl font-bold text-obsidian mb-3 group-hover:text-emerald-600 transition-colors">
+                        {post.title}
+                      </h3>
+
+                      <p className="text-slate-600 text-sm leading-relaxed mb-8 flex-grow">
+                        {post.excerpt}
+                      </p>
+
+                      <div className="mt-auto flex justify-between items-center border-t border-slate-100 pt-5">
+                        <span className="text-sm font-bold text-obsidian group-hover:text-emerald-600 transition-colors">Read Entry</span>
+                        <div className="w-8 h-8 rounded-full bg-ivory flex items-center justify-center text-emerald-500 group-hover:bg-emerald-500 group-hover:text-white transition-colors">
+                          <ArrowRight weight="bold" className="group-hover:translate-x-0.5 transition-transform" />
+                        </div>
+                      </div>
+                    </div>
+                  </motion.a>
+                ))}
+              </div>
+            </section>
+          )}
 
         </main>
       </div>

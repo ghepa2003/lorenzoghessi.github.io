@@ -1,4 +1,5 @@
 import { motion, useScroll, useTransform } from 'framer-motion';
+import { Link } from 'react-router-dom';
 import { PageTransition } from '../components/PageTransition';
 import { ArrowRight, TerminalWindow, MapPin, Code, ShieldCheck } from '@phosphor-icons/react';
 import { ROSTerminalCard, StepResponseCard, SFCDiagramCard } from '../components/MotionEngineCards';
@@ -49,14 +50,14 @@ export default function Home() {
                   transition={{ delay: 0.6, type: 'spring', stiffness: 100, damping: 20 }}
                   className="flex flex-wrap gap-4 mb-12"
                 >
-                  <button className="glass-panel group flex items-center gap-2 px-6 py-3 rounded-full text-ivory font-medium hover:bg-emerald-500 hover:text-obsidian hover:border-emerald-500 transition-all duration-300 shadow-[0_0_20px_rgba(16,185,129,0.2)]">
+                  <Link to="/engineering" className="glass-panel group flex items-center gap-2 px-6 py-3 rounded-full text-ivory font-medium hover:bg-emerald-500 hover:text-obsidian hover:border-emerald-500 transition-all duration-300 shadow-[0_0_20px_rgba(16,185,129,0.2)]">
                     <span>View Engineering</span>
                     <ArrowRight className="group-hover:translate-x-1 transition-transform" />
-                  </button>
-                  <button className="flex items-center gap-2 px-6 py-3 rounded-full text-slate-300 font-medium hover:text-ivory transition-colors duration-300 border border-white/5 bg-white/5 hover:bg-white/10">
+                  </Link>
+                  <a href={`${import.meta.env.BASE_URL}ghessi_CV.pdf`} download="Lorenzo_Ghessi_CV.pdf" className="flex items-center gap-2 px-6 py-3 rounded-full text-slate-300 font-medium hover:text-ivory transition-colors duration-300 border border-white/5 bg-white/5 hover:bg-white/10">
                     <TerminalWindow />
                     <span className="font-mono text-sm">Download CV</span>
-                  </button>
+                  </a>
                 </motion.div>
 
                 {/* Operator ID Card - Moved under buttons */}
@@ -105,7 +106,7 @@ export default function Home() {
                           <p className="text-slate-500 font-mono text-[9px] uppercase mb-0.5">Location</p>
                           <p className="text-ivory font-medium text-xs sm:text-sm flex items-center gap-1.5">
                             <MapPin className="text-emerald-500 shrink-0" />
-                            Milano / Genova
+                            Milan/Genoa
                           </p>
                         </div>
                         <div>
@@ -121,7 +122,10 @@ export default function Home() {
                             <p className="text-slate-500 font-mono text-[9px] uppercase mb-0.5">Current Role</p>
                             <p className="text-ivory font-medium text-xs sm:text-sm flex items-start sm:items-center gap-1.5 leading-tight">
                               <TerminalWindow className="text-emerald-500 shrink-0 mt-0.5 sm:mt-0" />
+                              {/* TODO: Uncomment when ready to display
                               Robotics Research Intern @ Leonardo
+                              */}
+                              Laboratory Coordinator @ Assolombarda
                             </p>
                           </div>
 

@@ -1,4 +1,4 @@
-import { Routes, Route, useLocation } from 'react-router-dom';
+import { Routes, Route, useLocation, useNavigationType } from 'react-router-dom';
 import { AnimatePresence } from 'framer-motion';
 import { Navbar } from './components/Navbar';
 import Home from './pages/Home';
@@ -9,11 +9,15 @@ import { useEffect } from 'react';
 
 function App() {
   const location = useLocation();
+  const navType = useNavigationType();
 
   // Dynamic background logic based on route
   useEffect(() => {
+    if (navType !== 'POP') {
+      window.scrollTo(0, 0);
+    }
     const root = document.documentElement;
-    if (location.pathname === '/life-and-logbook' || location.pathname === '/reading-archive') {
+    if (location.pathname === '/life' || location.pathname === '/reading-archive') {
       // Light Mode
       root.style.setProperty('--bg-primary', '#FAF8F5'); // Ivory
       root.style.setProperty('--text-primary', '#0D0D12'); // Obsidian
@@ -35,7 +39,7 @@ function App() {
         <Routes location={location} key={location.pathname}>
           <Route path="/" element={<Home />} />
           <Route path="/engineering" element={<Engineering />} />
-          <Route path="/life-and-logbook" element={<LifeAndLogbook />} />
+          <Route path="/life" element={<LifeAndLogbook />} />
           <Route path="/reading-archive" element={<ReadingArchive />} />
         </Routes>
       </AnimatePresence>
