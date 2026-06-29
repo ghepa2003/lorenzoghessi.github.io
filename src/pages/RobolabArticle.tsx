@@ -9,7 +9,7 @@ export default function RobolabArticle() {
 
   const content = {
     it: {
-      title: "Robolab: Quattro anni di robotica, problem solving e gestione team",
+      title: "Robolab: Quattro Anni di Robotica, Problem Solving e Gestione Team",
       intro: "Cinque anni fa, al primo anno di università, ho iniziato la mia collaborazione con Robolab. Un’esperienza che inizialmente sembrava quasi banale, utile solo a tirar su qualche soldo per pagarmi le vacanze, e che si è invece trasformata in una palestra sia tecnica che di vita. Dopo quattro anni effettivi, nei quali sono passato da semplice facilitatore a una figura di coordinamento sia del team che del laboratorio stesso, è arrivato il momento di farsi da parte per accogliere nuove sfide. Prima però, voglio raccontare il significato che ha avuto questa esperienza per me.",
       sections: [
         {
@@ -26,7 +26,7 @@ export default function RobolabArticle() {
             "Sotto un certo punto di vista, sì. Ovviamente l’attività principale rimane quella di insegnare e trasmettere qualcosa ai ragazzi, che sia un concetto teorico o l'uso di un dispositivo. Dall’altra parte, però, ero molto più di un prof. Una sessione di laboratorio prevede molto di più di una singola spiegazione perché i ragazzi sono curiosi, irrequieti e, oltre a dover rispondere a ogni loro domanda e intrattenerli nei passaggi più statici, bisogna essere in grado di risolvere in fretta i problemi che creano smanettando con tecnologie che a loro sembrano semplici, ma che nella realtà sono decisamente complesse.",
             "In un colloquio una volta dissi che i ragazzini delle medie sono dei clienti estremamente impegnativi, dato che provocano il fermo macchina, non capiscono il perché (e qualche volta a caldo non lo capivo nemmeno io), ma si spazientiscono in fretta se il robot non va. Devi trovare il problema il più rapidamente possibile per non perdere la loro attenzione ed evitare che si annoino. Questo continuo scoprire nuovi bug e risolverli sotto pressione mi ha permesso di ampliare notevolmente le mie competenze."
           ],
-          image: "IMG_4991.jpg",
+          image: "IMG_4906.jpg",
           imagePos: "right"
         },
         {
@@ -82,7 +82,7 @@ export default function RobolabArticle() {
             "In a way, yes. Obviously, the core activity is to teach and pass something on to the students, whether it's a theoretical concept or how to use a device. On the other hand, though, I was much more than just a teacher. A laboratory session requires far more than a simple lecture because students are curious, restless and, besides answering all their questions and keeping them engaged during the more static stages, you must be able to quickly fix the issues they cause while tinkering with technologies that seem simple to them, but are actually highly complex.",
             "In an interview once, I said that middle school kids are extremely demanding clients given that they cause machine downtime, they don't understand why (and sometimes, in the heat of the moment, neither did I), but they quickly lose patience if the robot stops moving. You have to find the bug as fast as possible to keep their attention and prevent them from getting bored. This continuous process of discovering new bugs and troubleshooting them under pressure allowed me to vastly expand my skills."
           ],
-          image: "IMG_4991.jpg",
+          image: "IMG_4906.jpg",
           imagePos: "right"
         },
         {
