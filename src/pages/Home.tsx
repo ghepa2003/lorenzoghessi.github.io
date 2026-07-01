@@ -136,10 +136,10 @@ export default function Home() {
                               <a href="https://linkedin.com/in/lorenzoghessi" target="_blank" rel="noopener noreferrer" className="font-mono text-xs sm:text-sm text-slate-400 hover:text-emerald-500 transition-colors">
                                 [LinkedIn]
                               </a>
-                              <a href="https://github.com/lorenzoghessi" target="_blank" rel="noopener noreferrer" className="font-mono text-xs sm:text-sm text-slate-400 hover:text-emerald-500 transition-colors">
+                              <a href="https://github.com/ghepa2003" target="_blank" rel="noopener noreferrer" className="font-mono text-xs sm:text-sm text-slate-400 hover:text-emerald-500 transition-colors">
                                 [GitHub]
                               </a>
-                              <a href="mailto:ghessilorenzo@gmail.com" className="font-mono text-xs sm:text-sm text-slate-400 hover:text-emerald-500 transition-colors">
+                              <a href="mailto:ghessi2003@gmail.com" className="font-mono text-xs sm:text-sm text-slate-400 hover:text-emerald-500 transition-colors">
                                 [Email]
                               </a>
                             </div>
